@@ -8,10 +8,26 @@
     <link rel="stylesheet" href="./assets/styles/style.css">
     <script src="./assets/scripts/paper-full.js"></script>
     <script type="text/paperscript" canvas="myCanvas">
+
+        var circles = [];
+
         function onKeyDown(event) {
+            var r = Math.floor(Math.random() * 256);
+            var g = Math.floor(Math.random() * 256);
+            var b = Math.floor(Math.random() * 256);
             var maxPoint = new Point(Math.floor(Math.random() * view.size.width), Math.floor(Math.random() * view.size.height));
-            new Path.Circle(new Point(maxPoint), 10).fillColor = 'crimson';
+            var newCir = new Path.Circle(new Point(maxPoint), 500);
+            newCir.fillColor = 'rgb(' + r + ', ' + g + ', ' + b + ')';
+            circles.push(newCir);
         }
+
+        function onFrame(event) {
+            for (var i = 0; i < circles.length; i++) {
+                circles[i].fillColor.hue += 1;
+                circles[i].scale(.9);
+            }
+        }
+
     </script>
 </head>
 <body>
