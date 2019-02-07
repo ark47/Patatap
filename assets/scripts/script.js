@@ -8,5 +8,5 @@ document.addEventListener('keydown', function() {
     let b = Math.floor(Math.random() * 127);
     let randomColor = `rgb(${r}, ${g}, ${b})`;
     bod.style.backgroundColor = randomColor;
-})
+});
 

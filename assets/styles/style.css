@@ -2,7 +2,11 @@ body, html {
     margin: 0;
     padding: 0;
     height: 100%;
+}
+
+body {
     background: darkolivegreen;
+    transition: all 0.5s;
 }
 
 canvas {
